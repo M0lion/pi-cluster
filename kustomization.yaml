@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 - argocd.yaml
+- https://github.com/cert-manager/cert-manager/releases/download/v1.17.0/cert-manager.yaml
 
 patches:
 - path: argocd-cmd-params-cm.yaml

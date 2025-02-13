@@ -11,12 +11,8 @@ metadata:
   annotations:
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
-  tls:
-    - hosts:
-        - https-argocd.moholt.dev
-      secretName: argocd-cert
   rules:
-    - host: argocd.moholt.dev
+    - host: argocd.raspberrypi
       http:
         paths:
           - path: /
@@ -26,16 +22,3 @@ spec:
                 name: argocd-server
                 port:
                   name: http
----
-apiVersion: cert-manager.io/v1
-kind: Certificate
-metadata:
-  name: argocd-cert
-  namespace: argocd
-spec:
-  dnsNames:
-    - argocd.moholt.dev
-  secretName: argocd-cert
-  issuerRef:
-    name: cloudflare-issuer
-    kind: ClusterIssuer
