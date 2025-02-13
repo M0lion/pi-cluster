@@ -5,3 +5,9 @@ namespace: cert-manager
 resources:
 - https://github.com/cert-manager/cert-manager/releases/download/v1.17.0/cert-manager.yaml
 
+patches:
+  - path: ./remove-instance-label.jsonpatch.yaml
+    target:
+      kind: CustomResourceDefinition
+      labelSelector: app.kubernetes.io/instance=cert-manager
+
