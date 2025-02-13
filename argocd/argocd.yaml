@@ -12,7 +12,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.tls: "true"
 spec:
   rules:
-    - host: argocd.raspberrypi
+    - host: raspberrypi
       http:
         paths:
           - path: /
