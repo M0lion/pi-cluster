@@ -23,3 +23,8 @@ spec:
         connect:
           credentialsName: 1password-credentials
           credentialsKey: credentials
+        operator:
+          create: true
+          token:
+            name: 1password-token
+            key: token
