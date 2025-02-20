@@ -10,16 +10,6 @@ metadata:
   namespace: argocd
 spec:
   rules:
-    - host: raspberrypi.local
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: argocd-server
-                port:
-                  name: http
     - host: raspberrypi
       http:
         paths:
